@@ -1,0 +1,166 @@
+:root {
+  /* ### Primary */
+--Cyan: hsl(179, 62%, 43%);
+--Bright-Yellow: hsl(71, 73%, 54%);
+  /* ### Neutral */
+--Light-Gray: hsl(204, 43%, 93%);
+--Grayish-Blue: hsl(218, 22%, 67%);
+}
+/* =================== Start Global Rules ===================   */
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background-color: var(--Cyan);
+  color: #fff;
+}
+body {
+  background-color: var(--Light-Gray);
+  min-height: 100vh;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Karla', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* =================== End Global Rules =================== */
+/* =================== Start The Design =================== */
+main {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "head head" "subs why";
+  overflow: hidden;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+main > div {
+  padding: 40px;
+}
+.details {
+  grid-area: head;
+  background-color: #fff;
+}
+.details h1 {
+  color: var(--Cyan);
+}
+.details h3 {
+  font-size: 23px;
+  color: var(--Bright-Yellow);
+  margin-bottom: 15px;
+}
+.details p {
+  color: var(--Grayish-Blue);
+  max-width: 600px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.subs {
+  grid-area: subs;
+  background-color: var(--Cyan);
+  color: #fff;
+
+}
+.subs h1 {
+  font-size: 22px;
+}
+.subs h2 {
+  font-size: 35px;
+}
+.subs h2 span {
+  font-size: 20px;
+  padding-bottom: 10px;
+  color: hwb(179 32% 21%);
+}
+.subs > span {
+  font-size: 18px;
+  display: block;
+  margin-top: 10px;
+}
+.subs button {
+  display: block;
+  margin: 50px auto 20px;
+  width: 225px;
+  padding: 15px;
+  background: var(--Bright-Yellow);
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 0px 4px 10px -2px #777;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.subs button:hover {
+  background-color: hsl(71, 69%, 54%);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.why {
+  grid-area: why;
+  background-color: hsl(179, 53%, 49%);
+  color: #fff;
+}
+.why h2 {
+  margin: 0 0 20px;
+}
+.why ul {
+  list-style: none;
+
+}
+.why li {
+  margin-bottom: 5px;
+  color: var(--Light-Gray);
+}
+@media (max-width: 767px) {
+  body {
+    padding: 70px 30px;
+  }
+  main {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .details h1 {
+    font-size: 25px;
+
+  }
+  .details h3 {
+    font-size: 20px;
+  }
+  .details p {
+    font-size: 16px;
+  }
+  .subs button {
+    width: 100%;
+    margin: 30px auto 0;
+  }
+}
+/* =================== End The Design =================== */
