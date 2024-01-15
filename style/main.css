@@ -24,6 +24,8 @@ body {
   font-size: 16px;
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   align-items: center;
   justify-content: center;
   font-family: 'Karla', sans-serif;
@@ -45,13 +47,54 @@ main {
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  box-shadow: 0px 2px 23px 1px var(--Grayish-Blue);
+}
+main:hover .details::before {
+  left: 0;
+}
+main:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 main > div {
   padding: 40px;
+  position: relative;
+  overflow: hidden;
 }
 .details {
   grid-area: head;
   background-color: #fff;
+  z-index: 2;
+}
+.details::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--Cyan);
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+}
+.details:hover::after {
+  right: 0;
 }
 .details h1 {
   color: var(--Cyan);
@@ -67,11 +110,38 @@ main > div {
   font-size: 20px;
   line-height: 1.5;
 }
+.details::after,
+.subs::after,
+.why::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.details::after {
+  right: -100%;
+  top: 0;
+  background-color: #f5f9f9;
+}
 .subs {
   grid-area: subs;
   background-color: var(--Cyan);
   color: #fff;
-
+  z-index: 2;
+}
+.subs::after {
+  right: -100%;
+  top: 0;
+  background-color: hsl(179deg 47.97% 48.76%);
+}
+.subs:hover::after {
+  right: 0;
 }
 .subs h1 {
   font-size: 22px;
@@ -87,7 +157,7 @@ main > div {
 .subs > span {
   font-size: 18px;
   display: block;
-  margin-top: 10px;
+  margin-top: 10pxw;
 }
 .subs button {
   display: block;
@@ -128,17 +198,36 @@ main > div {
   grid-area: why;
   background-color: hsl(179, 53%, 49%);
   color: #fff;
+  z-index: 2;
+
+}
+.why::after {
+  left: -100%;
+  top: 0;
+  background-color: hsla(179, 49%, 47%, 0.817)
+}
+.why:hover::after {
+  left: 0;
 }
 .why h2 {
   margin: 0 0 20px;
 }
 .why ul {
   list-style: none;
-
 }
 .why li {
   margin-bottom: 5px;
   color: var(--Light-Gray);
+}
+footer {
+  
+}
+footer p {
+  font-size: 20px;
+}
+footer p a {
+  color: var(--Cyan);
+  font-weight: bold;
 }
 @media (max-width: 767px) {
   body {
